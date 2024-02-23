@@ -1,0 +1,200 @@
+{% extends "layout.html" %} {% load static %}
+
+<!-- component -->
+{% block content %}
+
+<!-- Error -->
+
+{% if error %}
+<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+  <strong class="font-bold">Error!</strong>
+  <span class="block sm:inline">{{ error }}</span>
+  <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+    <svg
+      class="fill-current h-6 w-6 text-red-500"
+      role="button"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+    >
+      <title>Close</title>
+      <path
+        fill-rule="evenodd"
+        d="M14.354 5.354a2 2 0 00-2.828 0L10 7.172 7.172 5.354a2 2 0 10-2.828 2.828L7.172 10l-2.828 2.828a2 2 0 102.828 2.828L10 12.828l2.828 2.828a2 2 0 102.828-2.828L12.828 10l2.828-2.828a2 2 0 000-2.828z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </span>
+</div>
+{% endif %}
+
+<div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+  <div class="container max-w-screen-lg mx-auto">
+    <div>
+      <h2 class="font-semibold text-xl text-gray-600">Sign up</h2>
+
+      <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+        <form
+          class="w-full"
+          method="post"
+          enctype="multipart/form-data"
+          action="/signup/"
+        >
+          {% csrf_token %}
+
+          <input type="hidden" name="userId" value="{{ user.userID }}" />
+
+          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-2">
+              <div
+                class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"
+              >
+                <div class="md:col-span-5">
+                  <label for="full_name">Full Name</label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="full_name"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    value=""
+                  />
+                </div>
+
+                <div class="md:col-span-5">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    value=""
+                    placeholder="email@domain.com"
+                  />
+                </div>
+
+                <div class="md:col-span-5">
+                  <label for="email">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    value=""
+                  />
+                </div>
+
+                <!-- Address -->
+                <!-- <div class="md:col-span-2">
+                  <label for="address">Address / Street</label>
+                  <input
+                    hidden
+                    type="text"
+                    name="address"
+                    id="address"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    value=""
+                    placeholder=""
+                  />
+                </div> -->
+
+                <div class="col-span-2 self-end">
+                  <label for="date">Date of Birth</label>
+                  <div class="relative max-w-sm">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <svg
+                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="datetime-local"
+                      name="dob"
+                      class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                      placeholder="Select date"
+                    />
+                  </div>
+                </div>
+
+                <div class="md:col-span-1">
+                  <label for="city">City</label>
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    value=""
+                    placeholder=""
+                  />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="country">Country / region</label>
+                  <div
+                    class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+                  >
+                    <input
+                      name="country"
+                      id="country"
+                      placeholder="Country"
+                      class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                      value=""
+                    />
+                  </div>
+                </div>
+
+                <div class="md:col-span-3">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                    placeholder="+20198193778"
+                    value=""
+                  />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="gender">Gender</label>
+                  <div
+                    class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+                  >
+                    <select
+                      name="gender"
+                      id="gender"
+                      placeholder="Gender"
+                      class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                      value=""
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="md:col-span-5 text-right">
+                  <div class="inline-flex items-end">
+                    <button
+                      class="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

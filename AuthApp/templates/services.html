@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- What is Our Service -->
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">What is Our Service</h2>
+
+            <p class="mt-4 text-gray-500 sm:text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
+                provident impedit esse recusandae facere libero harum sequi.
+            </p>
+        </div>
+
+        <div class="mt-8 sm:mt-12">
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'mistake.png' %}" alt="icon-1" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Fall Detection</dt>
+                    <dd class="mt-4 text-gray-500">
+                        A fall detection project typically involves creating a system that can automatically detect when a person has fallen down and may need assistance.
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'emergency-call.png' %}" alt="icon-2" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Emergency Call</dt>
+                    <dd class="mt-4 text-gray-500">
+                        enhances the safety and well-being of individuals by automatically alerting designated contacts in the event of a fall, facilitating prompt assistance when needed.
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'monitoring.png' %}" alt="icon-3" />
+                    <dt class
+                    ="mt-2 text-lg font-bold text-gray-900">Health Monitoring</dt>
+                    <dd class="mt-4 text-gray-500">
+                        Health Monitoring
+                        Show when elder fallen down, and what history medical of patient.
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</section>
+
+<!-- How to use it -->
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">How to use it</h2>
+
+            <p class="mt-4 text-gray-500 sm:text-xl">
+                Download the app and install the device to start using our service (as a caregiver).
+                or use our Website and use Webcam to start using our service (as a patient).
+            </p>
+        </div>
+
+        <div class="mt-8 sm:mt-12">
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'smartphone.png' %}" alt="icon-4" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Install the Device</dt>
+                    <dd class="mt-4 text-gray-500">
+                        Download the app and install the device to start using our service (as a caregiver).
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'wifi.png' %}" alt="icon-5" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Connect to the Internet</dt>
+                    <dd class="mt-4 text-gray-500">
+                        Connect to the Internet & Turn on GPS Location
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'start-button.png' %}" alt="icon-6" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Start Using</dt>
+                    <dd class="mt-4 text-gray-500">
+                        Start using our service
+                        <button href="{% url 'webcam' %}" class="w-full block bg-red-500 text-white px-4 py-2 rounded-lg">
+                            <a href="{% url 'webcam' %}">Start Using</a>
+                        </button>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

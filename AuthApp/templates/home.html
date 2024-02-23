@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="relative bg-gray-900 text-white">
+    
+    <div class="absolute inset-0">
+      <img class="z-30 w-full h-full object-cover" src="{% static 'hero.jpg' %}" alt="hero" />
+      <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
+    </div>
+
+    <div class="relative z-50 mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1
+          class="bg-gradient-to-r from-orange-200 via-orange-500 to-purple-400 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+        >
+          Fall Guard.
+  
+          <span class="sm:block"> Increase Protection. </span>
+        </h1>
+  
+        <p class="font-sm mx-auto mt-4 max-w-xl text-xs/relaxed">
+          Ensuring safety is our top priority. Our innovative fall detection system provides peace of mind for you and your loved ones. With advanced technology integrated into your home, we offer a reliable solution to detect falls and accidents promptly.
+        </p>
+  
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            class="block w-full rounded border border-orange-600 bg-orange-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+            href="{% url 'services' %}"
+          >
+            Get Started
+          </a>
+  
+          <a
+            class="block w-full rounded border border-orange-600 px-12 py-3 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
+            href="{% url 'about' %}"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="bg-white">
+  <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Trusted by Medical Businesses</h2>
+
+      <p class="mt-4 text-gray-500 sm:text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
+        provident impedit esse recusandae facere libero harum sequi.
+      </p>
+    </div>
+
+    <div class="mt-8 sm:mt-12">
+      <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+
+          <img src="{% static 'helping-hand.png' %}" class="w-7 h-7 mb-3" />
+
+          <dt class="order-last text-lg font-medium text-gray-500">Total Helps</dt>
+
+          <dd class="text-4xl font-extrabold text-orange-600 md:text-5xl">4</dd>
+        </div>
+
+        <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+
+          <img src="{% static 'carer.png' %}" class="w-7 h-7 mb-3" />
+
+          <dt class="order-last text-lg font-medium text-gray-500">Total Caregivers</dt>
+
+          <dd class="text-4xl font-extrabold text-orange-600 md:text-5xl">7</dd>
+        </div>
+
+        <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+
+          <img src="{% static 'slipped.png' %}" class="w-7 h-7 mb-3" />
+
+          <dt class="order-last text-lg font-medium text-gray-500">Total Patients</dt>
+
+          <dd class="text-4xl font-extrabold text-orange-600 md:text-5xl">19</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col items-center">
+  <div class="text-transparent bg-gradient-to-r from-blue-500 via-orange-500 to-purple-700 bg-clip-text flex items-center gap-3 justify-center">
+    <img class="w-15 h-16" src="{% static 'fall_detect_icon.png' %}" />
+    <h2 class="text-4xl font-bold">Discover Our Service</h2>
+  </div>
+
+  <div class="relative w-2/3 mx-auto my-5 bg-orange-100 p-4 rounded-lg">
+    <h2 class="text-2xl my-4"> <span class="text-3xl text-orange-500"> > </span> Fall Detection Service</h2>
+    <div class="flex flex-wrap">
+      <div class="flex-2 mb-4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore
+          provident impedit esse recusandae facere libero harum sequi.
+        </p>
+
+        <img class="absolute right-[-10px] top-[-15px] w-16 h-16" src="{% static 'mistake.png' %}" />
+      </div>
+      <div class="w-full flex justify-end">
+        <button class="bg-orange-500 text-white rounded-lg px-4 py-2">
+          <a href="{% url 'services' %}">Try Now</a>
+        </button>  
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+{% endblock %}
+

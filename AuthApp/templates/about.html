@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- What is Our Service -->
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Who Are We</h2>
+
+            <p class="mt-4 text-gray-500 sm:text-xl">
+                We are Graduation Team we provide Special service for people of any ages (young, elder, ...)
+                We Built this service by many Technologies and we plan to add more new featurs.
+            </p>
+        </div>
+
+        <div class="my-5 flex flex-wrap justify-center -space-x-4 rtl:space-x-reverse">
+            <div class="basis-[calc(90%/4)] bg-orange-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy1.jpg'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy5.jpg'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy2.jpg'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy3.avif'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy4.jpg'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-ora  nge-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'boy6.jpg'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'girl2.png'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'girl3.avif'%}" />
+            </div>
+            <div class="basis-[calc(90%/4)] bg-orange-50 max-w-40 h-40 rounded-full dark:border-gray-200">
+                <img class="object-fit w-full" src="{%static 'girl1.jpg'%}" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How to use it -->
+<section class="my-24">
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">What is Our Mission</h2>
+
+            <p class="mt-4 text-gray-500 sm:text-xl">
+                We seek to build very useful digital solutions for people and community to help them in thier life,
+                and also to understand and know what is real problems they suffering from.
+            </p>
+        </div>
+
+        <div class="mt-8 sm:mt-12">
+            <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'support.png' %}" alt="icon-4" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Ease</dt>
+                    <dd class="mt-4 text-gray-500">
+                        We provide easy services to help people and make thier lifes so easy!
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'understand.png' %}" alt="icon-5" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Connect to the People</dt>
+                    <dd class="mt-4 text-gray-500">
+                        We seek as well to understand the blocks and obstacle that people face in thier life
+                    </dd>
+                </div>
+
+                <div class="flex flex-col items-center rounded-lg bg-orange-50 px-4 py-8 text-center">
+                    <img class="h-12 w-12" src="{% static 'digital-solutions.png' %}" alt="icon-6" />
+                    <dt class="mt-2 text-lg font-bold text-gray-900">Digital Solutions</dt>
+                    <dd class="mt-4 text-gray-500">
+                        We provides digital solutions to solve these real-life problems which people face
+                        <button class="w-full block bg-red-500 text-white px-4 py-2 rounded-lg">
+                            <a href="{% url 'services' %}">Explore</a>
+                        </button>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
